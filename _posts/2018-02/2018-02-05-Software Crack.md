@@ -36,11 +36,37 @@ document.write(password());
 </html>
 
 
-### [UltraEdit for Mac](http://www.ultraedit.com/downloads/uex.html#macreq)
-   >* 破解方法：-->终端运行，仅限18.00.0.19破解
-   ```
-   printf '\x31\xC0\xFF\xC0\xC3\x90' | dd seek=$((0x777160)) conv=notrunc bs=1 of=/Applications/UltraEdit.app/Contents/MacOS/UltraEdit
-   ```
+### UltraEdit for Mac-->[官网下载](http://www.ultraedit.com/downloads/uex.html#macreq)
+
+>**破解方法：-->安装结束后，先运行一次，再在终端里执行下面代码完成破解；**
+   * 仅限18.00.0.19破解
+```
+printf '\x31\xC0\xFF\xC0\xC3\x90' | dd seek=$((0x777160)) conv=notrunc bs=1 
+of=/Applications/UltraEdit.app/Contents/MacOS/UltraEdit
+```
+   * 仅限18.00.0.17破解
+```
+printf '\x31\xC0\xFF\xC0\xC3\x90' | dd seek=$((0x776BE0)) conv=notrunc bs=1 
+of=/Applications/UltraEdit.app/Contents/MacOS/UltraEdit
+```
+   * 仅限18.00.0.12破解
+```
+printf '\x31\xC0\xFF\xC0\xC3\x90' | dd seek=$((0x776DA0)) conv=notrunc bs=1 
+of=/Applications/UltraEdit.app/Contents/MacOS/UltraEdit
+```
+   * 仅限16.10.0.22破解
+```
+printf '\x31\xC0\xFF\xC0\xC3\x90' | dd seek=$((0x92D370)) conv=notrunc bs=1 
+of=/Applications/UltraEdit.app/Contents/MacOS/UltraEdit
+```
+>* Ps：附赠項 -->推荐技术使用
+   
+   >**【修改skProtectionPlus::IsActivated函数，会修改的后续版本可以自已改！】**
+   >* 1.你下载个IDA pro，打开idaq64;
+   >* 2.然后把Applications/UltraEdit.app/Contents/MacOS/UltraEdit拖到IDA里;
+   >* 3.在导出函数里找到skProtectionPlus::IsActivated
+   <img src="https://bbsimg.fengimg.com/2016/11/20/12845509_屏幕快照%202016-11-20%20下午2.09.59.png">
+   <img src="https://bbsimg.fengimg.com/2016/11/20/12845512_屏幕快照%202016-11-20%20下午2.10.47.png">
 
 
 
